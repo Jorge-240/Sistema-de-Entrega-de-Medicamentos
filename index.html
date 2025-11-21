@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Entrega de Medicamentos</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema de Entrega de Medicamentos</h1>
+        <p class="subtitle">IPS - Tratamiento de Hipertensión e Hipotensión</p>
+
+        <div class="card">
+            <h2>Inventario Inicial</h2>
+            <div class="input-group">
+                <label for="med1">Existencias Medicamento 1:</label>
+                <input type="number" id="med1" min="0" placeholder="Ingrese cantidad">
+            </div>
+            <div class="input-group">
+                <label for="med2">Existencias Medicamento 2:</label>
+                <input type="number" id="med2" min="0" placeholder="Ingrese cantidad">
+            </div>
+            <button id="initBtn" class="btn-primary">Iniciar Sistema</button>
+        </div>
+
+        <div id="patientSection" class="card hidden">
+            <h2>Registro de Paciente</h2>
+            <div class="patient-info">
+                <p>Medicamento 1: <span id="stock1">0</span> dosis</p>
+                <p>Medicamento 2: <span id="stock2">0</span> dosis</p>
+            </div>
+            <div class="input-group">
+                <label for="sistolica">Presión Sistólica:</label>
+                <input type="number" id="sistolica" placeholder="mmHg" step="0.1">
+            </div>
+            <div class="input-group">
+                <label for="diastolica">Presión Diastólica:</label>
+                <input type="number" id="diastolica" placeholder="mmHg" step="0.1">
+            </div>
+            <button id="addPatientBtn" class="btn-primary">Registrar Paciente</button>
+            <button id="finishBtn" class="btn-secondary">Finalizar Atención</button>
+            
+            <div id="diagnosis" class="diagnosis hidden"></div>
+        </div>
+
+        <div id="patientsLog" class="card hidden">
+            <h3>Registro de Pacientes Atendidos</h3>
+            <div id="logContent"></div>
+        </div>
+
+        <div id="resultsSection" class="card hidden">
+            <h2>Resultados Finales</h2>
+            <div id="results"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
